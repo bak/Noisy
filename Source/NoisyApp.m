@@ -133,7 +133,7 @@ static NSString *sNoiseVolumeKeyPath = @"NoiseVolume";
         if ([theKeys length] == 1) {
             keyChar = [theKeys characterAtIndex:0];
             
-            // CommandanEventshift arrow will set the volume to max or min
+            // Command+Shift+arrow will set the volume to max or min
             if ([anEvent modifierFlags] & NSCommandKeyMask && [anEvent modifierFlags] & NSShiftKeyMask) {
                 if (keyChar == NSLeftArrowFunctionKey || keyChar == NSDownArrowFunctionKey) {
                     [self setVolume:sNoiseMinVolume];
