@@ -155,6 +155,26 @@ static NSString *sNoiseVolumeKeyPath = @"NoiseVolume";
                 return;
             }
             
+            // Command+{1..4} corresponds to Off, White, Pink, Brown
+            if ([anEvent modifierFlags] & NSCommandKeyMask) {
+                if ([anEvent keyCode] == 18) { // 1
+                    [self setNoiseType:NoNoiseType];
+                    return;
+                }
+                if ([anEvent keyCode] == 19) { // 2
+                    [self setNoiseType:WhiteNoiseType];
+                    return;
+                }
+                if ([anEvent keyCode] == 20) { // 3
+                    [self setNoiseType:PinkNoiseType];
+                    return;
+                }
+                if ([anEvent keyCode] == 21) { // 4
+                    [self setNoiseType:BrownNoiseType];
+                    return;
+                }
+            }
+
             //Spacebar toggles mute.
             if ([anEvent keyCode] == 49) {
                 [self toggleMute];
